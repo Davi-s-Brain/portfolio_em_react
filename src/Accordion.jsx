@@ -1,19 +1,40 @@
+import { useState, useRef } from 'react'
 import { Chevron } from './Chevron'
 import './styles/accordion.scss'
 
 export function Accordion(props) {
+  const [setActive, setActiveState] = useState("");
+  const [setHeight, setHeightState] = useState("0px");
+  const [setRotate, setRotateState] = useState("accordion__icon");
+
+  const content = useRef(null);
+
+  function toggleAccordion() {
+    setActiveState(setActive === "" ? "active" : "");
+    setHeightState(
+      setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
+    );
+    setRotateState(
+      setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
+    );
+  }
+
   return (
-    <div className="accordion_section">
-      <button className="accordion">
-        <p className="accordion_title">{props.title}</p>
-        <Chevron className={"accordion_icon"} width={10} fill={"#fff"}/>
+    <div className="accordion__section">
+      <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
+        <p className="accordion__title">{props.title}</p>
+        <Chevron className={`${setRotate}`} width={10} fill={"#777"} />
       </button>
-      <div className="accordion_content">
+      <div
+        ref={content}
+        style={{ maxHeight: `${setHeight}` }}
+        className="accordion__content"
+      >
         <div
-          className="accordion_text"
+          className="accordion__text"
           dangerouslySetInnerHTML={{ __html: props.content }}
         />
       </div>
-    </div>  
+    </div>
   )
 }
