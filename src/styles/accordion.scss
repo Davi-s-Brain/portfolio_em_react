@@ -1,27 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+
+.accordion_section {
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+}
+
 .accordion {
-  background-color: rgb(129, 169, 255);
-  color: #444;
+  background-color: rgb(59, 59, 59);
+  color: rgb(134, 134, 134);
   cursor: pointer;
   padding: 18px;
-  width: 70rem;
+  display: flex;
+  align-items: center;
   border: none;
-  border-radius: 10px;
-  text-align: left;
   outline: none;
-  font-size: 15px;
-  transition: 0.4s;
+  transition: background-color 0.6s ease;
+  width: 60rem;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc;
+.accordion:hover,
+.active {
+  background-color: rgb(167, 167, 167);
 }
 
-.panel {
-  padding: 0 18px;
-  background-color: rgb(137, 178, 255);
-  max-height: 0;
-  width: 67.7rem;
-  border-radius: 10px;
+.accordion_title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.accordion_icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.accordion_content {
+  background-color: rgb(141, 141, 141);
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.6s ease;
+  width: 60rem;
+}
+
+.accordion_text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px;
 }

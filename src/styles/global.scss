@@ -84,6 +84,14 @@ div#sobre > p {
   margin: 0px 10px 10px 0px;
 } 
 
+div#accordion {
+  margin: auto;
+
+  div {
+    margin: auto;
+  }
+}
+
 div > p {
   width: auto;
 }
