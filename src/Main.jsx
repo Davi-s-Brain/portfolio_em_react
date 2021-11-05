@@ -1,4 +1,3 @@
-/* import '../node_modules css/flexboxgrid/css/flexboxgrid.css' */
 import foto from './images/davi.jpg'
 import { Content } from './Content'
 import { Links } from './Links'
