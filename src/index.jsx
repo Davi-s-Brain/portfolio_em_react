@@ -4,6 +4,7 @@ import { App } from "./App"
 import { Main } from "./Main";
 import { Footer } from "./Footer"
 import { Accordions } from "./Accordions";
+import { Todox } from "./Todo"
 import './styles/global.scss'
 import '../node_modules_css/flexboxgrid/css/flexboxgrid.css'
 
@@ -17,6 +18,7 @@ render(
       <Accordions />
       <Accordions />
     </div>
+    <Todox />
     <Footer />
   </div>,
 
